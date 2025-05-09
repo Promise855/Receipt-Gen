@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receipt Generator Form</title>
+    <link rel="stylesheet" href="/src/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <form id="receiptForm" aria-label="Receipt Generator Form">
+            <h2>Receipt Details</h2>
+            <div>
+                <label for="customerName">Customer Name:</label>
+                <input type="text" id="customerName" required title="Enter the customer's full name" aria-required="true">
+            </div>
+            <div>
+                <label for="phoneNumber">Phone Number:</label>
+                <input type="text" id="phoneNumber" required title="Enter a valid phone number (e.g., +2349155743615)" aria-required="true">
+            </div>
+            <div>
+                <label for="invoiceNumber">INVOICE NO:</label>
+                <input type="text" id="invoiceNumber" required title="Enter a unique invoice number (5-20 characters)" aria-required="true">
+            </div>
+            <div>
+                <label for="date">Date:</label>
+                <input type="date" id="date" required title="Select the invoice date" aria-required="true">
+            </div>
+            <div>
+                <label for="paymentMode">Payment Mode:</label>
+                <select id="paymentMode" required title="Select the payment method" aria-required="true">
+                    <option value="Bank Transfer">Bank Transfer</option>
+                    <option value="Cash">Cash</option>
+                    <option value="Card Payment">Card Payment</option>
+                    <option value="Not Paid">Not Paid</option>
+                </select>
+            </div>
+            <div id="itemTable">
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>S/N</th>
+                                <th>Name</th>
+                                <th>Item Description</th>
+                                <th>Item Details</th>
+                                <th>Qty</th>
+                                <th>(₦) Unit Price</th>
+                                <th>Discount (%)</th>
+                                <th>Amount</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="itemRows"></tbody>
+                    </table>
+                </div>
+                <button type="button" id="addItem" aria-label="Add New Item">Add Item</button>
+            </div>
+            <div id="totals">
+                <p>Item-Qty: <span id="itemQty">0</span></p>
+                <p>Sub Total: <span id="subTotal">0</span></p>
+                <p>Total: <span id="total">0</span></p>
+                <p>Amount In Words: <span id="amountInWords"></span></p>
+            </div>
+            <button type="submit" aria-label="Generate Receipt">Generate Receipt</button>
+        </form>
+        <div id="preview" style="display: none; margin-top: 20px;">
+            <h3>Live Preview</h3>
+            <div id="previewContent"></div>
+        </div>
+    </div>
+    <script type="module" src="/src/js/script.js"></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'93bea9378cc9458f',t:'MTc0NjU5OTM0NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

@@ -1,0 +1,385 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding-top: 80px;
+    font-family: 'Inter Tight', sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+    background-color: #f7f6f6;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.hero {
+    margin-top: 25px;
+    align-items: center;
+    width: 26%;
+}
+
+.header {
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 10px;
+}
+
+.contact-info {
+    align-items: center;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.contact-info a {
+    color: #003087; 
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline; 
+}
+
+.invoice-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100;
+    margin-top: 2rem;
+}
+
+.customer-details {
+    text-align: left;
+}
+
+.customer-details p {
+    font-size: 0.9rem;
+}
+
+.invoice-details {
+    text-align: right;
+}
+
+.invoice-details p {
+    font-size: 0.9rem;
+}
+
+.invoice-details h1 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/*This is used to make the (th) in the date to be a superscript*/
+sup {
+    font-size: 10px;
+    vertical-align: super;
+}
+
+/*Table-section (Used AI to research on how to style it so it will be able to aling well)*/
+.item-table {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 2rem;
+    table-layout: fixed; /* Added table-layout to Forces cells to respect width/max-width */
+    border-collapse: collapse;
+    background-color: #f7f6f6;
+}
+
+th, td {
+    border: 1px solid #222222;
+    padding: 10px;
+    text-align: center;
+    font-size: 0.9rem;
+    vertical-align: top; /*Added Vertical-align to align text at the top of each cell*/
+    box-sizing: border-box;
+}
+
+/* Styled the table td so it will not keep expanding when an item with a long name or description is logged in */
+td {
+    width: 100px; /* Sets a base width for consistent cell sizing */
+    max-width: 100px; /* Constrains cell width to trigger wrapping */
+    overflow-wrap: break-word; /* Breaks words to fit within max-width */
+    hyphens: auto; /* Adds hyphenation for better text flow */
+}
+
+/* Target the S/N*/
+th:first-child,
+td:first-child {
+    width: 50px; /* Smaller width for S/N column */
+    max-width: 50px; /* Prevent expansion */
+}
+
+/* Target the Qty column (fifth column) */
+th:nth-child(5),
+td:nth-child(5) {
+    width: 60px;
+    max-width: 60px;
+}
+
+/* Target the Unit Price, Discount, and Amount columns */
+th:nth-child(6), td:nth-child(6), /* Unit Price */
+th:nth-child(7), td:nth-child(7), /* Discount */
+th:nth-child(8), td:nth-child(8) /* Amount */ {
+    width: 125px;
+    max-width: 125px;
+}
+
+.totals-section {
+    margin-top: 3rem;
+    border: none;
+}
+
+.totals-details p {
+    margin: 5px auto;
+    font-size: 14px;
+    text-align: right;
+}
+
+.totals-details p span {
+    font-weight: bold;  
+}
+
+.invoice-details p:first-child {
+    margin-top: 0;
+}
+
+.invoice-details p:last-child {
+    margin-bottom: 0;
+}
+
+/* Invoice Number - Make it red */
+.invoice-details h1 span#invoiceNumber {
+    color: #9e0101; /* Red color */
+}
+
+/* Customer Name - Bold */
+.customer-details p:first-child span#customerName {
+    font-weight: bold;
+}
+
+/* Phone Number - Bold */
+.customer-details p:last-child span#phoneNumber {
+    font-weight: bold;
+}
+
+/* Date - Bold */
+.invoice-details p span#date {
+    font-weight: bold;
+}
+
+.terms-section {
+    margin-bottom: 20px;
+    margin-top: 7rem;
+}
+
+.terms-section h2 {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.terms-section p {
+    font-size: 14px;
+    color: #333;
+    margin: 10px 0;
+    line-height: 1.5;
+}
+
+.terms-section ol {
+    font-size: 14px;
+    color: #333;
+    margin: 10px 0;
+    padding-left: 30px;
+    line-height: 1.5;
+}
+
+.terms-section ol li {
+    margin-bottom: 10px;
+}
+
+.partner-text {
+    font-weight: bold;
+    font-size: 12px;
+    font-style: italic;
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 5rem;
+}
+
+.thank-you-text {
+    font-weight: bold;
+    font-size: 12px;
+    font-style: italic;
+    text-align: center;
+    margin-bottom: 0;
+    padding-bottom: 20px;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: #888 #f1f1f1; /* Firefox */
+}
+
+.table-wrapper::-webkit-scrollbar {
+    height: 8px; /* Chrome, Safari */
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+    background: #888; /* Scrollbar color */
+    border-radius: 4px;
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Track color */
+}
+
+@media (max-width: 768px) {
+    .item-table {
+        display: block; /* Ensure overflow works */
+    }
+
+    table {
+        min-width: 0; /* Remove min-width on small screens */
+    }
+
+    th, td {
+        font-size: 0.8rem; /* Smaller text on mobile */
+        padding: 8px; /* Reduce padding */
+    }
+
+    /* Adjusted to ensure text wraps on smaller devices without excessive overflow */
+    td {
+        max-width: 100px; /* Reduced max-width for smaller screens to fit content */
+        overflow-wrap: break-word;
+    }
+}
+
+@media (max-width: 480px) {
+    th, td {
+        font-size: 0.75rem; /* Even smaller text for very small screens */
+        padding: 6px;
+    }
+
+    /* Ensures tight wrapping on narrow screens to prevent overlap */
+    td {
+        max-width: 80px; /* Further reduced max-width for very small screens */
+        overflow-wrap: break-word;
+    }
+}
+
+@media print {
+    .terms-section {
+        page-break-before: always;
+        break-before: page; /* Fallback for modern browsers */
+        margin-top: 10px;
+    }
+
+    /* Ensures text wraps in print to avoid cutoff */
+    td {
+        max-width: 120px;
+        overflow-wrap: break-word;
+        word-break: break-all;
+    }
+
+    button {
+        display: none; /* Hide buttons in print view */
+    }
+
+    table {
+        font-size: 10pt;
+    }
+}
+
+/* Add to existing receipt.css */
+@media (max-width: 768px) {
+    table {
+        font-size: 0.8rem;
+    }
+    th, td {
+        padding: 6px;
+        max-width: 80px;
+        overflow-wrap: break-word;
+        word-break: break-all;
+    }
+    td:nth-child(4) { /* Item Details column */
+        max-width: 120px; /* Allow more space for details */
+    }
+}
+
+@media print {
+    button {
+        display: none;
+    }
+    .terms-section {
+        page-break-before: always;
+    }
+    table {
+        font-size: 10pt;
+    }
+    td:nth-child(4) {
+        max-width: 150px;
+        overflow-wrap: break-word;
+    }
+}
+
+/* Add to existing receipt.css */
+.item-details-cell {
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.detail-label {
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    table {
+        font-size: 0.8rem;
+    }
+    th, td {
+        padding: 6px;
+        max-width: 80px;
+        overflow-wrap: break-word;
+        word-break: break-all;
+    }
+    td:nth-child(4) { /* Item Details column */
+        max-width: 120px;
+    }
+}
+
+@media print {
+    button {
+        display: none;
+    }
+    .terms-section {
+        page-break-before: always;
+    }
+    table {
+        font-size: 10pt;
+    }
+    td:nth-child(4) {
+        max-width: 150px;
+        overflow-wrap: break-word;
+    }
+    td {
+        width: 100px; /* Sets a base width for consistent cell sizing */
+        max-width: 100px; /* Constrains cell width to trigger wrapping */
+        word-break:keep-all;
+        hyphens: auto; /* Adds hyphenation for better text flow */
+    }
+}

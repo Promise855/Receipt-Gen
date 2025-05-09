@@ -1,0 +1,569 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter Tight', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #212529;
+    line-height: 1.6;
+    padding: 20px;
+    font-size: 16px;
+}
+
+/*Form Style*/
+form {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #041a33;
+    font-size: 1.5rem;
+}
+
+label {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    transition: border-color 0.2s;
+    font-size: 0.95rem;
+}
+
+input:focus, select:focus {
+    border-color: #50a5ff;
+    outline: none;
+}
+
+button {
+    padding: 5px 10px;
+    background-color: #022142;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+    font-size: 0.75rem;
+}
+
+button:hover {
+    background-color: #053f7c;
+    transform: scale(1.05);
+}
+
+#itemTable {
+    width: 100%;
+    margin-bottom: 20px;
+    overflow-x: auto; /* Enable horizontal scrolling on small screens */
+}
+
+#itemTable table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    min-width: 600px;
+}
+
+#itemTable th, #itemTable td {
+    padding: 8px;
+    text-align: left;
+    white-space: nowrap;
+    border-bottom: 1px solid #dee2e6;
+    font-size: 0.9rem;
+}
+
+#itemTable input {
+    width: 100%;
+    padding: 4px;
+    box-sizing: border-box;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+#itemTable input[name="name"] {
+    width: 80px; 
+}
+
+#itemTable input[name="qty"] {
+    width: 55px; 
+}
+
+#itemTable .removeItem {
+    background-color: #790707;
+    color: #ffffff;
+    border: none;
+    padding: 4px 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-size: 0.85rem;
+}
+
+#itemTable .removeItem:hover {
+    background-color: #c82333;
+}
+
+#totals {
+    text-align: right;
+    margin-top: 20px;
+}
+
+#totals p {
+    margin: 5px 0;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    text-align: center;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #007bff;
+}
+
+.hero {
+    width: 120px;
+    margin-bottom: 10px;
+}
+
+.contact-info p {
+    font-size: 0.85rem;
+    color: #6c757d;
+}
+
+.invoice-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.customer-details, .invoice-details {
+    padding: 8px;
+}
+
+.invoice-details {
+    text-align: right;
+}
+
+.invoice-details h1 {
+    font-size: 1.25rem;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.item-table {
+    overflow-x: auto;
+}
+
+.item-table table {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 1.5rem;
+    border-collapse: collapse;
+    background-color: #f7f6f6;
+}
+
+.item-table th, .item-table td {
+    border: 1px solid #222222;
+    padding: 8px;
+    text-align: left;
+    font-size: 0.85rem;
+}
+
+.item-table tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.total-section {
+    margin-top: 15px;
+    text-align: right;
+}
+
+.totals-details p {
+    margin: 5px 0;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.terms-section {
+    margin-top: 30px;
+    font-size: 0.75rem;
+    color: #6c757d;
+    border-top: 1px solid #dee2e6;
+    padding-top: 20px;
+}
+
+.terms-section h2 {
+    margin-bottom: 10px;
+    text-align: center;
+    color: #007bff;
+    font-size: 1rem;
+}
+
+.terms-section ol {
+    padding-left: 15px;
+}
+
+.partner-text, .thank-you-text {
+    text-align: center;
+    font-style: italic;
+    margin-top: 15px;
+    color: #007bff;
+    font-size: 0.85rem;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 10px;
+    border-top: 1px solid #dee2e6;
+    font-size: 0.75rem;
+    color: #6c757d;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: #888 #f1f1f1; /* Firefox */
+}
+
+.table-wrapper::-webkit-scrollbar {
+    height: 6px; /* Chrome, Safari */
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+    background: #888; /* Scrollbar color */
+    border-radius: 4px;
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Track color */
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    form {
+        padding: 15px; 
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    label {
+        font-size: 0.85rem;
+    }
+
+    input, select {
+        padding: 6px; 
+        margin-bottom: 10px; 
+        font-size: 0.9rem;
+    }
+
+    button {
+        padding: 5px 10px;
+        font-size: 0.7rem;
+    }
+
+    .details-btn {
+        padding: 5px 10px;
+        font-size: 0.7rem;
+    }
+
+    #itemTable {
+        display: block; /* Allow overflow to work properly */
+    }
+
+    #itemTable table {
+        width: 100%;
+        min-width: 0; /* Remove min-width on small screens */
+    }
+
+    #itemTable th, #itemTable td {
+        font-size: 0.8rem; /* Slightly smaller text on mobile */
+        padding: 6px; /* Reduce padding for compactness */
+    }
+
+    #itemTable input {
+        padding: 3px;
+        font-size: 0.8rem; 
+    }
+
+    #itemTable input[name="qty"] {
+        width: 45px; /* Slightly smaller width on mobile for better fit */
+    }
+
+    #itemTable .removeItem {
+        padding: 3px 6px; 
+        font-size: 0.75rem; 
+    }
+
+    #totals p {
+        font-size: 0.85rem; 
+    }
+
+    .container {
+        padding: 15px; 
+    }
+
+    .header {
+        padding-bottom: 10px; 
+    }
+
+    .hero {
+        width: 100px; 
+    }
+
+    .contact-info p {
+        font-size: 0.8rem; 
+    }
+
+    .invoice-container {
+        grid-template-columns: 1fr;
+        gap: 10px; 
+    }
+
+    .invoice-details {
+        text-align: left;
+    }
+
+    .invoice-details h1 {
+        font-size: 1.1rem; 
+    }
+
+    .item-table table {
+        margin-top: 1rem; 
+    }
+
+    .item-table th, .item-table td {
+        padding: 6px; 
+        font-size: 0.8rem; 
+    }
+
+    .total-section {
+        margin-top: 10px; 
+    }
+
+    .totals-details p {
+        font-size: 0.85rem; 
+    }
+
+    .terms-section {
+        margin-top: 20px; 
+        font-size: 0.7rem;
+    }
+
+    .terms-section h2 {
+        font-size: 0.9rem; 
+    }
+
+    .partner-text, .thank-you-text {
+        font-size: 0.8rem; 
+        margin-top: 10px; 
+    }
+
+    .footer {
+        margin-top: 20px; 
+        font-size: 0.7rem; 
+    }
+
+    .total-section, .terms-section, .footer {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 13px; /* Even smaller base */
+    }
+
+    form {
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+    }
+
+    label {
+        font-size: 0.8rem;
+    }
+
+    input, select {
+        padding: 5px;
+        font-size: 0.85rem;
+    }
+
+    button {
+        padding: 4px 9px;
+        font-size: 0.65rem;
+    }
+
+    .details-btn {
+        padding: 4px 9px;
+        font-size: 0.65rem;
+    }
+
+    #itemTable th, #itemTable td {
+        font-size: 0.75rem;
+        padding: 5px;
+    }
+
+    #itemTable input {
+        font-size: 0.75rem;
+        padding: 2px;
+    }
+
+    #itemTable input[name="qty"] {
+        width: 40px;
+    }
+
+    #itemTable .removeItem {
+        padding: 2px 5px;
+        font-size: 0.7rem;
+    }
+
+    #totals p {
+        font-size: 0.8rem;
+    }
+}
+
+/* Item details btn styling */
+.details-btn {
+    background-color: #022142;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.7rem;
+    transition: background-color 0.3s;
+}
+
+.details-btn:hover {
+    background-color: #02538b;
+}
+
+.item-details-popover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popover-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+.popover-content {
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    width: 300px;
+    max-width: 90%;
+    transform: scale(0.95);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.item-details-popover.visible .popover-content {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.popover-content h3 {
+    margin: 0 0 10px;
+    font-size: 1rem;
+    color: #022142;
+}
+
+.popover-field {
+    margin-bottom: 5px;
+}
+
+.popover-field label {
+    display: block;
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.popover-field input {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+.popover-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.popover-actions button {
+    flex: 1;
+    padding: 6px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.save-details {
+    background-color: #022142;
+    color: white;
+}
+
+.save-details:hover {
+    background-color: #02538b;
+}
+
+.cancel-details {
+    background-color: #790707;
+    color: #e0e0e0;
+}
+
+.cancel-details:hover {
+    background-color: #a50606;
+}
