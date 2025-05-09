@@ -1,9 +1,8 @@
 // vite.config.js
-import { defineConfig } from 'vite';
+import { defineConfig } from 'vite'
 
 export default defineConfig({
-  // Base path for the app (use '/' for default)
-  base: '/',
+  base: '/Receipt-Gen/',
   
   // Configure the server
   server: {
