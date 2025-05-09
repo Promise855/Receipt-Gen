@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice</title>
+    <link rel="stylesheet" href="/src/css/receipt.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <img class="hero" src="/img/Octa-logo.png" alt="Octavian Dynamics Logo" aria-label="Company Logo">
+            <div class="contact-info">
+                <p>17 Chief Benjamin Wopara Plaza, Ogbum Nagbali, Eastern Bypass, Port Harcourt, Rivers State.</p>
+                <a target="_blank" href="https://wa.me/+2349155743615" aria-label="WhatsApp Contact">+234 915 574 3615</a> | 
+                <a href="mailto:octaviandynamics@gmail.com" aria-label="Email Contact">octaviandynamics@gmail.com</a> | <a href="mailto:contact@Octaviandynamics.com">contact@Octaviandynamics.com</a>
+            </div>
+        </header>
+        <div class="invoice-container">
+            <div class="customer-details">
+                <p>Name: <span id="customerName" aria-label="Customer Name"></span></p>
+                <p>Phone Number: <span id="phoneNumber" aria-label="Customer Phone Number"></span></p>
+            </div>
+            <div class="invoice-details">
+                <h1>INVOICE No: <span id="invoiceNumber" aria-label="Invoice Number"></span></h1>
+                <p>Date: <span id="date" aria-label="Invoice Date"></span></p>
+            </div>
+        </div>
+        <section class="items-table">
+            <div class="table-wrapper">
+                <table aria-label="Invoice Items Table">
+                    <thead>
+                        <tr>
+                            <th>S/N</th>
+                            <th>Name</th>
+                            <th>Item Description</th>
+                            <th>Item Details</th>
+                            <th>Qty</th>
+                            <th>(₦) Unit Price</th>
+                            <th>Discount (%)</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody id="itemRows"></tbody>
+                </table>
+            </div>
+        </section>
+        <div class="totals-section">
+            <div class="totals-details">
+                <p>Item-Qty: <span id="itemQty" aria-label="Total Item Quantity"></span></p>
+                <p>Sub Total: <span id="subTotal" aria-label="Sub Total"></span></p>
+                <p>Total: <span id="total" aria-label="Total Amount"></span></p>
+                <p>Payment Mode: <span id="paymentMode" aria-label="Payment Mode"></span></p>
+                <p>Amount In Words: <span id="amountInWords" aria-label="Amount in Words"></span></p>
+            </div>
+        </div>
+        <div class="terms-section">
+            <h2>Terms & Conditions</h2>
+            <p>New devices procured from OCTAVIAN DYNAMICS ENTERPRISES LTD fall under standard manufacturers warranty & conditions and are redeemable at manufacturer’s warranty/service centres in Nigeria.</p>
+            <ol type="i">
+                <li>All product and after-sales issues should be forwarded to manufacturers’ warranty centres for new devices or OCTAVIAN DYNAMICS ENTERPRISES LTD after-sales department for pre-owned devices.</li>
+                <li>Ensure you retain the original packaging of the gadget as well as the customer pickup document as you will be required to produce these for warranty or exchange purposes.</li>
+                <li>Prior to utilizing your device/gadget, it is advisable to first charge the battery for a given time period stipulated by the manufacturer. This will elongate the battery life.</li>
+                <li>Warranty provided by the manufacturer does not cover non-mechanical, physical damage or liquid caused by negligent use of the device/gadget.</li>
+                <li>In the event that your device has a manufacturer fault and this is identified at the place and time of purchase, the devices can be returned for replacement.</li>
+                <li>Unless otherwise stated, manufacturer warranty cover over 1 (1) year for new devices and battery utilized in conjunction with the device has a warranty cover of 6 months (depending on make and model) from date of purchase. Warranty provision can be found on the reverse of the invoice. By signing this document you acknowledge that you read and understood the terms and conditions on the reverse of the invoice and you accept them.</li>
+                <li>OCTAVIAN DYNAMICS ENTERPRISES LTD offers 14days warranty on all UK used devices.</li>
+                <li>Should you experience any problem with your devices you may either take it to the manufacturers closest technical service center or OCTAVIAN DYNAMICS ENTERPRISES LTD repair outlet for used devices.</li>
+            </ol>
+            <p class="partner-text">Our Partner in Tech Excellence</p>
+            <p class="thank-you-text">Thank you for contributing to the future!</p>
+        </div>
+    </div>
+    <script type="module" src="/src/js/receipt.js"></script>
+</body>
+</html>
