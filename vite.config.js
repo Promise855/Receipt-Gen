@@ -2,7 +2,7 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-  base: '/Receipt-Gen/',
+  base: '/',
   
   // Configure the server
   server: {
