@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const addItemBtn = document.getElementById('addItem');
     let serialNumber = 1;
 
-    const phonePattern = /^\+?\d{10,15}$/;
+    const phonePattern = /^((\+?\d{10,15})|([a-zA-Z\s]+))$/;
     const invoicePattern = /^[A-Z0-9-]{5,20}$/;
 
     const formatNumberWithCommas = (number) => {
